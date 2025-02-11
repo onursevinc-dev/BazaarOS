@@ -33,7 +33,7 @@ const CustomModal = ({
     <Dialog open={isOpen || defaultOpen} onOpenChange={setClose}>
       <DialogContent
         className={cn(
-          "overflow-y-scroll md:max-h-[700px] md:h-fit h-screen bg-card",
+          "overflow-y-scroll md:max-h-[700px] md:h-fit h-screen bg-card ",
           maxWidth
         )}
       >
