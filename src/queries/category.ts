@@ -87,6 +87,22 @@ export const getAllCategories = async () => {
   return categories;
 };
 
+// Function: getAllSubCategoriesForCategory
+// Description: Retrieves all SubCategories for category from the database.
+// Permission Level: public
+// Returns: Array of subCategories sorted by updatedAt date in descending order.
+
+export const getAllSubCategoriesForCategory = async (categoryId: string) => {
+  // Retrieves all subCategories of category from the database
+  const subCategories = await db.subCategory.findMany({
+    where: {
+      categoryId,
+    },
+    orderBy: { updatedAt: "desc" },
+  });
+  return subCategories;
+};
+
 // Function: getCategory
 // Description: Retrieves a specific category from the database.
 // Access Level: Public
